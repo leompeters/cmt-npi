@@ -36,5 +36,14 @@ module CmtNpi
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.generators do |g|
+      # @see https://stackoverflow.com/a/9884102/2334082
+      g.test_framework :rspec
+      g.integration_tool :rspec
+      # https://www.codementor.io/@mohnishjadwani/how-to-setup-rspec-factory-bot-and-spring-for-a-rails-5-engine-qjdpthfb1
+      g.fixture_replacement :factory_bot
+      g.factory_bot(dir: 'spec/factories', suffix: 'factory')
+    end
   end
 end
