@@ -1,0 +1,11 @@
+###
+
+GET https://npiregistry.cms.hhs.gov/api/?version=2.1&city=baltimore
+Accept: application/json
+
+###
+
+GET https://npiregistry.cms.hhs.gov/api/?version=2.1&city=baltimore&pretty=true
+Accept: application/json
+
+###
