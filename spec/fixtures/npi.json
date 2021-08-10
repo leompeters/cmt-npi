@@ -1,0 +1,73 @@
+{
+  "enumeration_type": "NPI-1",
+  "number": 1083617021,
+  "last_updated_epoch": 1382572800,
+  "created_epoch": 1116806400,
+  "basic": {
+    "name_prefix": "DR.",
+    "first_name": "SUSAN",
+    "last_name": "BEHEN",
+    "middle_name": "L",
+    "credential": "M.D.",
+    "sole_proprietor": "NO",
+    "gender": "F",
+    "enumeration_date": "2005-05-23",
+    "last_updated": "2013-10-24",
+    "status": "A",
+    "name": "BEHEN SUSAN"
+  },
+  "other_names": [],
+  "addresses": [
+    {
+      "country_code": "US",
+      "country_name": "United States",
+      "address_purpose": "LOCATION",
+      "address_type": "DOM",
+      "address_1": "900 CATON AVE",
+      "address_2": "",
+      "city": "BALTIMORE",
+      "state": "MD",
+      "postal_code": "212295201",
+      "telephone_number": "410-368-2700",
+      "fax_number": "410-368-8498"
+    },
+    {
+      "country_code": "US",
+      "country_name": "United States",
+      "address_purpose": "MAILING",
+      "address_type": "DOM",
+      "address_1": "900 CATON AVE",
+      "address_2": "",
+      "city": "BALTIMORE",
+      "state": "MD",
+      "postal_code": "212295201",
+      "telephone_number": "410-368-2700",
+      "fax_number": "410-368-8498"
+    }
+  ],
+  "taxonomies": [
+    {
+      "code": "208C00000X",
+      "desc": "Colon & Rectal Surgery",
+      "primary": false,
+      "state": "MD",
+      "license": "D0044563"
+    },
+    {
+      "code": "208600000X",
+      "desc": "Surgery",
+      "primary": true,
+      "state": "MD",
+      "license": "D0044563"
+    }
+  ],
+  "identifiers": [
+    {
+      "identifier": "162661200",
+      "code": "05",
+      "desc": "MEDICAID",
+      "state": "MD",
+      "issuer": ""
+    }
+  ]
+}

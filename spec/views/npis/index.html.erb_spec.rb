@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'npis/index', type: :view do
   before(:each) do
-    assign(:npis, [Npi.create!(number: '', data: ''), Npi.create!(number: '', data: '')])
+    assign(:npis, create_list(:npi, 2, data: ''))
   end
 
   it 'renders a list of npis' do

@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'npis/edit', type: :view do
   before(:each) do
-    @npi = assign(:npi, Npi.create!(number: '', data: ''))
+    @npi = assign(:npi, create(:npi))
   end
 
   it 'renders the edit npi form' do
