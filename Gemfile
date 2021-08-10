@@ -28,6 +28,10 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'jsonb_accessor', '~> 1.3', '>= 1.3.2'
 
+gem 'jquery-rails', '~> 4.4'
+gem 'sprockets-rails', '~> 3.2', '>= 3.2.2'
+gem 'bootstrap', '~> 5.0', '>= 5.0.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

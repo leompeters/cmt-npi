@@ -1,29 +1,54 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Npis</h1>
+<h1 class="display-6">
+  <small class="lead text-muted">CMT Solutions</small><br />
+  National Provider Identifier (NPI)
+</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Number</th>
-      <th>Data</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="col-md-3">
+  <div class="input-group mt-3 mb-3">
+    <input type="text" class="form-control" placeholder="NPI number"
+           aria-label="NPI number" aria-describedby="button-search-npi">
+    <button class="btn btn-primary" type="button" id="button-search-npi">search</button>
+  </div>
+</div>
 
-  <tbody>
-    <% @npis.each do |npi| %>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
       <tr>
-        <td><%= npi.number %></td>
-        <td><%= npi.data %></td>
-        <td><%= link_to 'Show', npi %></td>
-        <td><%= link_to 'Edit', edit_npi_path(npi) %></td>
-        <td><%= link_to 'Destroy', npi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Number</th>
+        <th>Data</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <% if @npis.length > 0 %>
+      <% @npis.each do |npi| %>
+        <tr>
+          <td><%= npi.number %></td>
+          <td><%= npi.data %></td>
+          <td><%= link_to 'Show', npi %></td>
+          <td><%= link_to 'Edit', edit_npi_path(npi) %></td>
+          <td><%= link_to 'Destroy', npi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan="5">
+          <div class="row justify-content-center">
+            <div class="alert alert-warning mt-3 col-md-6 text-center" role="alert">
+              No NPIs searched.
+            </div>
+          </div>
+        </td>
       </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>
 
 <br>
 
-<%= link_to 'New Npi', new_npi_path %>
+<%= link_to 'New Npi', new_npi_path, class: 'btn btn-secondary btn-sm', role: 'button' %>

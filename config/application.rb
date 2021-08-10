@@ -38,6 +38,7 @@ module CmtNpi
     config.generators.system_tests = nil
 
     config.generators do |g|
+      g.javascript_engine :js
       # @see https://stackoverflow.com/a/9884102/2334082
       g.test_framework :rspec
       g.integration_tool :rspec
