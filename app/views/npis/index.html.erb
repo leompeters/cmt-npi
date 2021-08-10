@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Npis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Data</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @npis.each do |npi| %>
+      <tr>
+        <td><%= npi.number %></td>
+        <td><%= npi.data %></td>
+        <td><%= link_to 'Show', npi %></td>
+        <td><%= link_to 'Edit', edit_npi_path(npi) %></td>
+        <td><%= link_to 'Destroy', npi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Npi', new_npi_path %>

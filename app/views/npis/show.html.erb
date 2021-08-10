@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @npi.number %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @npi.data %>
+</p>
+
+<%= link_to 'Edit', edit_npi_path(@npi) %> |
+<%= link_to 'Back', npis_path %>

@@ -1,0 +1,27 @@
+<%= form_with(model: npi) do |form| %>
+  <% if npi.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(npi.errors.count, "error") %> prohibited this npi from being saved:</h2>
+
+      <ul>
+        <% npi.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.text_field :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.text_field :data %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
