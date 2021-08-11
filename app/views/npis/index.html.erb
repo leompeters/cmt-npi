@@ -5,13 +5,7 @@
   National Provider Identifier (NPI)
 </h1>
 
-<div class="col-md-3">
-  <div class="input-group mt-3 mb-3">
-    <input type="text" class="form-control" placeholder="NPI number"
-           aria-label="NPI number" aria-describedby="button-search-npi">
-    <button class="btn btn-primary" type="button" id="button-search-npi">search</button>
-  </div>
-</div>
+<%= render 'form', npi: Npi.new %>
 
 <div class="table-responsive">
   <table class="table table-hover">

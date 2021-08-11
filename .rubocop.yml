@@ -542,6 +542,10 @@ Naming/VariableName:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#snake-case-symbols-methods-vars'
   Enabled: true
 
+Naming/VariableNumber:
+  Enabled: true
+  EnforcedStyle: snake_case
+
 ################## Style #################################
 
 Style/Alias:
@@ -1171,8 +1175,8 @@ Style/SpecialGlobalVars:
 Style/StringHashKeys:
   Description: 'Prefer symbols instead of strings as hash keys.'
   StyleGuide: '#symbols-as-keys'
-  Enabled: true
-#  Safe: false
+  Enabled: false
+  # Safe: false
 
 Style/StringLiterals:
   Description: 'Checks if uses of quotes match the configured preference.'

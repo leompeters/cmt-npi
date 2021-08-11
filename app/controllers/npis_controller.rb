@@ -2,6 +2,7 @@
 
 class NpisController < ApplicationController
   before_action :set_npi, only: %i[show edit update destroy]
+  skip_before_action :verify_authenticity_token, if: -> { request.format.json? }
 
   # GET /npis or /npis.json
   def index
@@ -21,7 +22,7 @@ class NpisController < ApplicationController
 
   # POST /npis or /npis.json
   def create
-    @npi = Npi.new(npi_params)
+    @npi = Npi.find_or_initialize_by(number: npi_params[:number])
 
     respond_to do |format|
       if @npi.save
@@ -65,6 +66,6 @@ class NpisController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def npi_params
-    params.require(:npi).permit(:number, :data)
+    params.require(:npi).permit(:number)
   end
 end

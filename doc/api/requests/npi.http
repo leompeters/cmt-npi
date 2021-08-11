@@ -9,3 +9,15 @@ GET https://npiregistry.cms.hhs.gov/api/?version=2.1&city=baltimore&pretty=true
 Accept: application/json
 
 ###
+
+POST {{host}}/npis.json
+Content-Type: application/json
+Accept: application/json
+
+{
+  "npi": {
+    "number": 1770586810
+  }
+}
+
+###

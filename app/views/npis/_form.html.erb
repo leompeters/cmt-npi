@@ -1,4 +1,4 @@
-<%= form_with(model: npi) do |form| %>
+<%= form_with(model: npi, id: 'request_npi') do |form| %>
   <% if npi.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(npi.errors.count, "error") %> prohibited this npi from being saved:</h2>
@@ -11,17 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :number %>
-    <%= form.text_field :number %>
-  </div>
-
-  <div class="field">
-    <%= form.label :data %>
-    <%= form.text_field :data %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="col-md-3">
+    <div class="input-group mt-3 mb-3">
+      <%= form.text_field :number, class: 'form-control', placeholder: 'NPI number',
+                          aria: { label: 'NPI number', describedby: 'button-request-npi' } %>
+      <%= form.submit 'request', class: 'btn btn-primary', id: 'button_request_npi',
+                      data: { loading_text: 'requesting...', complete_text: 'requested' } %>
+    </div>
   </div>
 <% end %>
