@@ -23,9 +23,7 @@ Rails.application.configure do
     config.action_controller.enable_fragment_cache_logging = true
 
     config.cache_store = :memory_store
-    # rubocop:disable Style/StringHashKeys
     config.public_file_server.headers = { 'Cache-Control' => "public, max-age=#{2.days.to_i}" }
-    # rubocop:enable Style/StringHashKeys
   else
     config.action_controller.perform_caching = false
 

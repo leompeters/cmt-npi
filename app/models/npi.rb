@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Npi < ApplicationRecord
+  include WithData
+
   validates :number, identifier: true, on: :create
   validates :number, presence: true, uniqueness: true
   # The below validations are handled by the +IdentifierValidator+.
