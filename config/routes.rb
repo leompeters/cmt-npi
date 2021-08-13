@@ -5,5 +5,5 @@
 Rails.application.routes.draw do
   root 'npis#index'
 
-  resources :npis
+  resources :npis, only: %i[index create]
 end
