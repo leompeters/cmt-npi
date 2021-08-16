@@ -5,7 +5,7 @@ module Mocks
   def mocks_on
     headers = { 'Accept' => 'application/json' }
     stub_request(:any, /(.*?)/)
-      .to_return(body: File.new('./spec/fixtures/npi.json'),
+      .to_return(body: File.read(Rails.root.join('spec/fixtures/npi.json')),
                  status: 200, headers: headers)
   end
 

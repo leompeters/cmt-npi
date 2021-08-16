@@ -6,14 +6,14 @@ class Npi < ApplicationRecord
 
     included do
       # Showing this way to access the json stored in the +data+ attribute.
-      jsonb_accessor :data, addresses: :jsonb
-      jsonb_accessor :data, taxonomies: :jsonb
+      jsonb_accessor :data, addresses: :jsonb,
+                            taxonomies: :jsonb
 
       def name
         data.dig('basic', 'name')
       end
 
-      def type
+      def enumeration_type
         data['enumeration_type']
       end
 

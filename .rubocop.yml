@@ -492,6 +492,9 @@ Layout/ParameterAlignment:
 Layout/RedundantLineBreak:
   Enabled: false
 
+Layout/SingleLineBlockChain:
+  Enabled: false
+
 ################## Naming #################################
 
 Naming/AccessorMethodName:

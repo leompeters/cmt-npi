@@ -16,7 +16,7 @@ Accept: application/json
 
 {
   "npi": {
-    "number": 1770586810
+    "number": 1770586
   }
 }
 

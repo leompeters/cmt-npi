@@ -11,6 +11,14 @@
 // about supported directives.
 //
 //= require jquery3
+//= require jquery_ujs
 //= require popper
-// require bootstrap-sprockets
 //= require bootstrap-sprockets
+//= require_self
+
+$(function() {
+  // Enable Twitter Bootstrap Tooltips.
+  $('body').tooltip({ selector: '.tooltip,[rel=tooltip],[data-bs-toggle=tooltip]' });
+  // Focus on the first visible field of the first form.
+  $('form:first input[type!="hidden"]:first').focus();
+});

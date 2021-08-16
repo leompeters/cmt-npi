@@ -1,7 +1,5 @@
 <% content_for_scripts 'npis' %>
 
-<p id="notice"><%= notice %></p>
-
 <h1 class="display-6">
   <small class="lead text-muted">CMT Solutions</small><br />
   National Provider Identifier (NPI)
@@ -14,46 +12,17 @@
     <thead>
       <tr>
         <th>
-          Number<br />
-          Name<br />
-          <small class="text-muted">Type</small>
+          Number |
+          <span class="fw-normal">Name</span> |
+          <small class="text-muted fw-normal">Type</small>
         </th>
-        <th>Addresses</th>
+        <th class="d-none d-sm-table-cell">Addresses</th>
+        <th class="d-none d-sm-table-cell">Taxonomies</th>
         <th></th>
       </tr>
     </thead>
 
-    <tbody>
-    <% if @npis.length > 0 %>
-      <% @npis.each do |npi| %>
-        <tr>
-          <td>
-            <b><%= npi.number %></b><br />
-            <%= npi.name %><br />
-            <small class="text-muted"><%= npi.type %></small>
-          </td>
-          <td><%= list_data npi.full_addresses %></td>
-          <td class="align-middle">
-            <%= button_tag 'Show data', type: 'button', class: 'btn btn-primary btn-sm',
-                           data: { bs_toggle: 'modal',
-                                   bs_target: '#npiDataModal',
-                                   bs_number: npi.number,
-                                   bs_json: JSON.pretty_generate(npi.data) } %>
-          </td>
-        </tr>
-      <% end %>
-    <% else %>
-      <tr>
-        <td colspan="3">
-          <div class="row justify-content-center">
-            <div class="alert alert-warning mt-3 col-md-6 text-center" role="alert">
-              No NPIs searched.
-            </div>
-          </div>
-        </td>
-      </tr>
-    <% end %>
-    </tbody>
+    <tbody id="npis_table_body"><%= render 'index' %></tbody>
   </table>
 </div>
 

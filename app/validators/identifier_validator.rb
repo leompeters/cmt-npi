@@ -4,12 +4,14 @@ class IdentifierValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     response_body = request_provider(value)
     response_body['Errors'].presence&.each do |error|
-      add_error(record, attribute, error['description'].downcase)
+      add_error(record, attribute, error['description']&.downcase)
     end
     return unless record.errors[attribute].empty?
     return add_error(record, attribute) if response_with_no_results?(response_body)
 
     record.data = response_body['results'].pop
+  rescue ActiveModel::MissingAttributeError => e
+    Rails.logger.warn e
   end
 
   private
