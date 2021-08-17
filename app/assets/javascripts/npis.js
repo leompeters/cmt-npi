@@ -30,7 +30,7 @@ $(document).ready(function() {
           showWarningToast(data.statusText, d);
         });
       } else {
-        showErrorToast('Error', data.responseText);
+        showErrorToast('Error', data.statusText);
       }
     }).always(function() {
       submitButton.button('reset');
