@@ -3,11 +3,7 @@
 Web application that is able to retrieve a provider’s details based on their
 National Provider Identifier (NPI).
 
-![Unit Tests - MAIN][]
-![Unit Tests - PULL REQUESTS][]
-
-[Unit Tests - MASTER]: https://github.com/leompeters/cmt-npi/workflows/unit/badge.svg?branch=main
-[Unit Tests - PULL REQUESTS]: https://github.com/leompeters/cmt-npi/workflows/unit/badge.svg?event=pull_request
+![CI - MAIN](https://github.com/leompeters/cmt-npi/workflows/ci/badge.svg?branch=main)
 
 There is a live version in this (link)[https://cmt-npi.herokuapp.com].
 It is mobile-friendly, you can try it on your phone!
