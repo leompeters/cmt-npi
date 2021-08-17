@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class IdentifierValidator < ActiveModel::EachValidator
+  class NpiServiceUnavailableError < StandardError; end
+
   def validate_each(record, attribute, value)
     response_body = request_provider(value)
     response_body['Errors'].presence&.each do |error|
@@ -23,6 +25,10 @@ class IdentifierValidator < ActiveModel::EachValidator
     request = Net::HTTP::Get.new(uri)
     request.add_field('Accept', 'application/json')
     response = http.request(request)
+    if response.is_a?(Net::HTTPServiceUnavailable) || response.code == '503'
+      raise NpiServiceUnavailableError, I18n.t('errors.npi.service_unavailable')
+    end
+
     ActiveSupport::JSON.decode(response.body)
   end
 

@@ -19,7 +19,11 @@ $(document).ready(function() {
       data:     form.serialize(),
       dataType: 'json'
     }).done(function(data, textStatus, jqXHR) {
-      showSuccessToast(jqXHR.statusText, 'NPI # ' + data.number + ' found with success');
+      showSuccessToast(
+        jqXHR.statusText,
+        'NPI # ' + data.number + ' found with success',
+        data.status
+      );
       submitButton.button('complete');
       // I could remove the row with the provided id and prepend it on the top
       // of the table body, but this time I preferred to show you guys this option.
@@ -27,10 +31,12 @@ $(document).ready(function() {
     }).fail(function(data) {
       if (data.status > 299 && data.status < 500) {
         data.responseJSON.forEach(function(d) {
-          showWarningToast(data.statusText, d);
+          showWarningToast(data.statusText, d, data.status);
         });
+      } else if (data.status === 503) {
+        showErrorToast(data.statusText, data.responseJSON, data.status);
       } else {
-        showErrorToast('Error', data.statusText);
+        showErrorToast('Error', data.statusText, data.status);
       }
     }).always(function() {
       submitButton.button('reset');

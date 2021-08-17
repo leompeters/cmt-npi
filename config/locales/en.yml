@@ -34,3 +34,4 @@ en:
   errors:
     npi:
       invalid_number: 'can not be found'
+      service_unavailable: 'NPI public API may be out'
