@@ -9,7 +9,8 @@ National Provider Identifier (NPI).
 [Unit Tests - MASTER]: https://github.com/leompeters/cmt-npi/workflows/unit/badge.svg?branch=main
 [Unit Tests - PULL REQUESTS]: https://github.com/leompeters/cmt-npi/workflows/unit/badge.svg?event=pull_request
 
-There is a live version in this (link)[].
+There is a live version in this (link)[https://cmt-npi.herokuapp.com].
+It is mobile-friendly, you can try it on your phone!
 
 ## Quick Start
 
