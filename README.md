@@ -5,7 +5,7 @@ National Provider Identifier (NPI).
 
 ![CI - MAIN](https://github.com/leompeters/cmt-npi/workflows/ci/badge.svg?branch=main)
 
-There is a live version in this (link)[https://cmt-npi.herokuapp.com].
+There is a live version in this [link](https://cmt-npi.herokuapp.com).
 It is mobile-friendly, you can try it on your phone!
 
 ## Quick Start

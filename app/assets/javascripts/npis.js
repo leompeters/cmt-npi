@@ -22,7 +22,7 @@ $(document).ready(function() {
       showSuccessToast(
         jqXHR.statusText,
         'NPI # ' + data.number + ' found with success',
-        data.status
+        jqXHR.status
       );
       submitButton.button('complete');
       // I could remove the row with the provided id and prepend it on the top
